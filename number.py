@@ -1,7 +1,7 @@
 class Number:
     def __init__(self, value: int):
         self.value = value
-
+        
 
     def get_number(self):
         """
@@ -9,7 +9,7 @@ class Number:
 
         returns: int
         """
-        pass
+        return self.value
 
     def is_odd(self):
         """
@@ -18,7 +18,7 @@ class Number:
         returns: bool
 
         """
-        pass
+        return self.value % 2 == 1
 
     def is_even(self):
         """
@@ -26,7 +26,7 @@ class Number:
 
         returns: bool
         """
-        pass
+        
 
     def is_prime(self):
         """
