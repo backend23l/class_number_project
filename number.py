@@ -60,6 +60,7 @@ class Number:
         returns: int
         """
         pass
+        
 
     def get_sum(self):
         """
@@ -75,7 +76,8 @@ class Number:
 
         returns: int
         """
-        pass
+        
+       return str(self.value)[::-1]
 
     def is_palindrome(self):
         """
@@ -143,5 +145,5 @@ class Number:
 
 
 # Create a new instance of Number
-number = Number(30)
-print(number.get_divisors())
+number = Number(32)
+print(number.get_reverse())
