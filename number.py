@@ -2,7 +2,7 @@ class Number:
     def __init__(self, value: int):
         self.value = value
         
-
+   
     def get_number(self):
         """
         Returns the number.
@@ -26,7 +26,7 @@ class Number:
 
         returns: bool
         """
-        
+
 
     def is_prime(self):
         """
@@ -131,7 +131,4 @@ class Number:
         returns: dict
         """
         pass
-    
-
-# Create a new instance of Number
-number = Number(3)
+ 
