@@ -59,15 +59,25 @@ class Number:
 
         returns: int
         """
-        pass
-
+        c=0
+        while self.value>0:
+            a=self.value%10
+            self.value //=10
+            c+=1
+        return c
+    
     def get_sum(self):
         """
         Returns the sum of all the digits in the number.
 
         returns: int
         """
-        pass
+        sum = 0
+        while self.value>0:
+            a = self.value%10
+            self.value //=10
+            sum+=a
+        return sum
 
     def get_reverse(self):
         """
@@ -75,6 +85,8 @@ class Number:
 
         returns: int
         """
+        while self.value>0:
+            a = self.value%10
         pass
 
     def is_palindrome(self):
