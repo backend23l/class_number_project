@@ -59,7 +59,7 @@ class Number:
 
         returns: int
         """
-        pass
+
 
     def get_sum(self):
         """
@@ -143,5 +143,5 @@ class Number:
 
 
 # Create a new instance of Number
-number = Number(30)
+number = Number()
 print(number.get_divisors())
