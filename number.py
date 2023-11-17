@@ -143,5 +143,5 @@ class Number:
 
 
 # Create a new instance of Number
-number = Number(120)
+number = Number()
 print(number.get_divisors())
