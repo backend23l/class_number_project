@@ -59,7 +59,11 @@ class Number:
 
         returns: int
         """
-        pass
+        k=0
+        y=self.value
+        while y>0:
+            y//=10
+        return k
 
     def get_sum(self):
         """
@@ -67,7 +71,13 @@ class Number:
 
         returns: int
         """
-        pass
+        k=0
+        y=self.value
+        while y>0:
+            k+=y%10
+            y//=10
+        return k
+
 
     def get_reverse(self):
         """
@@ -75,7 +85,8 @@ class Number:
 
         returns: int
         """
-        pass
+        x=str(int(self.value))
+        return int(str(x[::-1]))
 
     def is_palindrome(self):
         """
