@@ -94,7 +94,7 @@ class Number:
 
         returns: bool
         """
-        pass
+        return True if str(int(self.value))[::-1]==str(int(self.value)) else False
 
     def get_digits(self):
         """
@@ -102,7 +102,12 @@ class Number:
 
         returns: list
         """
-        pass
+        l=[]
+        y=self.value
+        while y>0:
+            l.append(y%10)
+            y//=10
+        return l
 
     def get_max(self):
         """
@@ -110,7 +115,14 @@ class Number:
 
         returns: int
         """
-        pass
+        x=-985412512125112
+        y=self.value
+        while y>0:
+            if y%10>x:
+                x=y%10
+            y//=10
+        return x
+
 
     def get_min(self):
         """
@@ -118,7 +130,13 @@ class Number:
 
         returns: int
         """
-        pass
+        x=985412512125112
+        y=self.value
+        while y>0:
+            if y%10<x:
+                x=y%10
+            y//=10
+        return x
 
     def get_average(self):
         """
@@ -126,7 +144,14 @@ class Number:
 
         returns: float
         """
-        pass
+        s=0
+        k=0
+        y=self.value
+        while y>0:
+            s+=y%10
+            k+=1
+            y//=10
+        return s/k
 
     def get_median(self):
         """
@@ -134,8 +159,12 @@ class Number:
 
         returns: float
         """
-        pass
-
+        y=self.value
+        x=str(int(y))
+        if len(x)%2==0:
+            return int(str(x[len(x)//2-1])),int(str(x[len(x)//2]))
+        else :
+            return int(str(x[len(x)//2]))
     def get_range(self):
         """
         Returns the range of all the digits in the number.
@@ -154,5 +183,5 @@ class Number:
 
 
 # Create a new instance of Number
-number = Number(30)
-print(number.get_divisors())
+number = Number(123)
+print(number.get_median())
