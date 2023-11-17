@@ -26,7 +26,7 @@ class Number:
 
         returns: bool
         """
-
+        pass
 
     def is_prime(self):
         """
@@ -34,7 +34,11 @@ class Number:
 
         returns: bool
         """
-        pass
+        for i in range(2, self.value):
+            if self.value % i:
+                return False
+
+        return True
 
     def get_divisors(self):
         """
@@ -42,7 +46,12 @@ class Number:
 
         returns: list
         """
-        pass
+        divisors = []
+        for i in range(1, self.value + 1):
+            if self.value % i == 0:
+                divisors.append(i)
+
+        return divisors
 
     def get_length(self):
         """
@@ -131,4 +140,7 @@ class Number:
         returns: dict
         """
         pass
-        print ("A")
+    
+
+# Create a new instance of Number
+number = Number(3)
