@@ -75,7 +75,7 @@ class Number:
 
         returns: int
         """
-        pass
+        return str(self.value)[::-1]
 
     def is_palindrome(self):
         """
