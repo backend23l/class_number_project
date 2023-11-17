@@ -140,8 +140,3 @@ class Number:
         returns: dict
         """
         pass
-
-
-# Create a new instance of Number
-number = Number(30)
-print(number.get_divisors())
