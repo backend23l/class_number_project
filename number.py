@@ -59,7 +59,8 @@ class Number:
 
         returns: int
         """
-        pass
+        a = self.get_digits()
+        return len(a)
         
 
     def get_sum(self):
@@ -68,7 +69,8 @@ class Number:
 
         returns: int
         """
-        pass
+        a = self.get_digits()
+        return sum(a)
 
     def get_reverse(self):
         """
@@ -77,7 +79,7 @@ class Number:
         returns: int
         """
         
-       return str(self.value)[::-1]
+        return str(self.value)[::-1] 
 
     def is_palindrome(self):
         """
@@ -85,7 +87,8 @@ class Number:
 
         returns: bool
         """
-        pass
+        a = self.get_digits()
+        return a[0]==[-1]
 
     def get_digits(self):
         """
@@ -93,7 +96,12 @@ class Number:
 
         returns: list
         """
-        pass
+        a = []
+        s = str(self.value)
+        for i in s:
+         a.append(int(i))
+        return a
+     
 
     def get_max(self):
         """
@@ -101,7 +109,8 @@ class Number:
 
         returns: int
         """
-        pass
+        a  = self.get_digits()
+        return max(a)
 
     def get_min(self):
         """
@@ -109,7 +118,8 @@ class Number:
 
         returns: int
         """
-        pass
+        a  = self.get_digits()
+        return min(a)
 
     def get_average(self):
         """
@@ -117,7 +127,8 @@ class Number:
 
         returns: float
         """
-        pass
+        a = self.get_digits()
+        return sum(a)/len(a)
 
     def get_median(self):
         """
@@ -125,7 +136,9 @@ class Number:
 
         returns: float
         """
-        pass
+        s = sorted(self.get_digits())
+        a  = len(s) // 2
+        return s[a]
 
     def get_range(self):
         """
@@ -133,7 +146,11 @@ class Number:
 
         returns: list
         """
-        pass
+        a = self.get_digits()
+        s = range(a[0],a[-1]+1)
+        return list(s)
+        
+
 
     def get_frequency(self):
         """
@@ -145,5 +162,5 @@ class Number:
 
 
 # Create a new instance of Number
-number = Number(32)
-print(number.get_reverse())
+number = Number(12534)
+print(number.get_median())
