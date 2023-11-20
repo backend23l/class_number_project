@@ -34,11 +34,13 @@ class Number:
 
         returns: bool
         """
-        for i in range(2, self.value):
-            if self.value % i:
-                return False
-
-        return True
+        a=self.value
+        for i in range(2,a+1):
+            if a%i==0:
+                return False 
+                break
+            else :
+                return True
 
     def get_divisors(self):
         """
@@ -47,11 +49,15 @@ class Number:
         returns: list
         """
         divisors = []
-        for i in range(1, self.value + 1):
-            if self.value % i == 0:
-                divisors.append(i)
-
-        return divisors
+        if self.is_prime():
+            for i in range(1, self.value + 1):
+                if self.value % i == 0:
+                    divisors.append(i)
+                else :
+                    continue
+            return divisors
+        else :
+            return "Is prime"
 
     def get_length(self):
         """
@@ -62,6 +68,7 @@ class Number:
         k=0
         y=self.value
         while y>0:
+            k+=1
             y//=10
         return k
 
@@ -73,9 +80,8 @@ class Number:
         """
         k=0
         y=self.value
-        while y>0:
-            k+=y%10
-            y//=10
+        for i in self.get_digits():
+            k+=i
         return k
 
 
@@ -85,8 +91,7 @@ class Number:
 
         returns: int
         """
-        x=str(int(self.value))
-        return int(str(x[::-1]))
+        return int(str(str(int(self.value))[::-1]))
 
     def is_palindrome(self):
         """
@@ -116,11 +121,11 @@ class Number:
         returns: int
         """
         x=-985412512125112
-        y=self.value
-        while y>0:
-            if y%10>x:
-                x=y%10
-            y//=10
+        for i in  self.get_digits():
+            if i>x:
+                x=i
+            else :
+                continue
         return x
 
 
@@ -131,11 +136,11 @@ class Number:
         returns: int
         """
         x=985412512125112
-        y=self.value
-        while y>0:
-            if y%10<x:
-                x=y%10
-            y//=10
+        for i in  self.get_digits():
+            if i<x:
+                x=i
+            else :
+                continue
         return x
 
     def get_average(self):
@@ -144,14 +149,7 @@ class Number:
 
         returns: float
         """
-        s=0
-        k=0
-        y=self.value
-        while y>0:
-            s+=y%10
-            k+=1
-            y//=10
-        return s/k
+        return self.get_sum()/self.get_length()
 
     def get_median(self):
         """
@@ -161,27 +159,42 @@ class Number:
         """
         y=self.value
         x=str(int(y))
-        if len(x)%2==0:
-            return int(str(x[len(x)//2-1])),int(str(x[len(x)//2]))
-        else :
-            return int(str(x[len(x)//2]))
+        return int(str(x[len(x)//2-1])),int(str(x[len(x)//2])) if len(x)%2==0 else int(str(x[len(x)//2]))
+            
     def get_range(self):
         """
         Returns the range of all the digits in the number.
 
         returns: list
         """
-        pass
-
+        return [self.get_min(),self.get_max()]
     def get_frequency(self):
         """
         Returns a dictionary of the frequency of each digit in the number.
-
         returns: dict
         """
-        pass
+        x=self.get_digits()
+        d={}
+        for i in range(len(x)):
+            d[x[i]]=d.get(x[i],0)+1
+        return d
 
 
 # Create a new instance of Number
-number = Number(123)
-print(number.get_median())
+number = Number(51)
+# print("number ",number.get_number())
+# print("number is odd",number.is_odd())
+# print("number is even ",number.is_even())
+# print("number is prime ",number.is_prime())
+# print("number get divisors",number.get_divisors())
+# print("number get lenght ",number.get_length())
+# print("number get sum ",number.get_sum())
+# print("number get reverse ",number.get_reverse())
+# print("number is palindrome ",number.is_palindrome())
+# print("number get digits ",number.get_digits())
+# print("number get max ",number.get_max())
+# print("number get min ",number.get_min())
+# print("number get average ",number.get_average())
+print("number get median",number.get_median())
+print("number get range ",number.get_range())
+print("number get frequency ",number.get_frequency())
